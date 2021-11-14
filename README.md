@@ -8,6 +8,10 @@ nodejs
 node libraries : express, better-sqlite
 ```
 ##how to deploy
+
+git clone app
+chown -R lampo:lampo /opt/soittilaweb
+
 ```
 create db
 
