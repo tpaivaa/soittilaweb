@@ -1,0 +1,26 @@
+{
+  "name": "soittilaweb",
+  "version": "0.0.1",
+  "description": "RaspiAPI",
+  "main": "app.js",
+  "dependencies": {
+    "better-sqlite3": "^7.4.4",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tpaivaa/soittilaweb.git"
+  },
+  "author": "Tpaivaa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tpaivaa/soittilaweb/issues"
+  },
+  "homepage": "https://github.com/tpaivaa/soittilaweb#readme"
+}

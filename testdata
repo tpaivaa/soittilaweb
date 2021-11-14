@@ -1,0 +1,18 @@
+DROP table awayHome;
+CREATE TABLE awayHome (id INTEGER PRIMARY KEY,Timestamp DATETIME DEFAULT CURRENT_TIMESTAMP, startDate TEXT UNIQUE, startTime TEXT , stopDate TEXT UNIQUE, stopTime TEXT);
+INSERT INTO awayHome (startDate, startTime, stopDate, stopTime) VALUES ('12.12.2021','10:00','13.12.2021', '12:00');
+INSERT INTO awayHome (startDate, startTime, stopDate, stopTime) VALUES ('23.02.2021','11:00','25.03.2021', '10:00');
+INSERT INTO awayHome (startDate, startTime, stopDate, stopTime) VALUES ('12.1.2021','10:00','01.06.2021', '12:00');
+
+.header on
+.mode column
+SELECT * FROM awayHome;
+
+
+
+
+
+
+curl -i -X POST -H 'Accept: application/json' \
+    -H 'Content-type: application/json' http://localhost:3000/awayhome \
+    --data '{"startDate":"01.01.2022","startTime":"09:00","stopDate":"02.01.2022","stopTime":"08:00"}'
