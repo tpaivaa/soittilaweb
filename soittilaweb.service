@@ -1,0 +1,14 @@
+[Unit]
+Description=Raspi WEB API
+Documentation=http://raspi:3000
+After=network.target
+
+[Service]
+Environment=NODE_PORT=3000
+Type=simple
+User=noderunner
+ExecStart=/usr/bin/node /opt/soittilaweb/app.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
