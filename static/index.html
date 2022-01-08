@@ -162,7 +162,6 @@
           })
       },
       deleteAwayHome (awayhome) {
-        console.log('deleting', awayhome)
         return axios.delete(`${this.apiURL}/${awayhome.id}`)
           .then((response) => {
             let copy = this.awayhomes.slice()

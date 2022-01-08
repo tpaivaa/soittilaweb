@@ -9,7 +9,7 @@ router.get('/awayHomes', (req, res) => {
   return db.awayHome.findAll()
     .then((awayHomes) => res.send(awayHomes))
     .catch((err) => {
-      console.log('There was an error querying awayHomes', JSON.stringify(err))
+      console.log('***There was an error querying awayHomes', JSON.stringify(err))
       return res.send(err)
     });
 });
@@ -51,9 +51,8 @@ router.delete('/awayHomes/:id', (req, res) => {
 
 router.get('/owfs/:id', (req, res) => {
   const id = req.params.id
-  console.log(id)
   return getTemp(id)
-    .then((result) => {console.log(result); res.send(result);})
+    .then((result) => res.send(result))
     .catch((err) => {
       console.log(`***Error getting sensor ${id} temperature`, JSON.stringify(err))
       res.status(400).send(err)
@@ -62,9 +61,9 @@ router.get('/owfs/:id', (req, res) => {
 
 router.post('/owfs/getTemps', (req, res) => {
   sensors = req.body
-  //console.log(sensors)
+
   getTemps(sensors)
-  .then((result) => {console.log(result); res.send(result);})
+  .then((result) => res.send(result))
     .catch((err) => {
       console.log(`***Error getting sensors ${Object.keys(req.body)} temperatures`, JSON.stringify(err))
       res.status(400).send(err)
