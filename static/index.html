@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Contacts</title>
+  <title>AwayHomes</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17-beta.0/vue.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -21,37 +21,39 @@
 <body>
   <div id="app" class="container">
     <section class="section section-container" style="padding-top: 24px; padding-bottom: 5px;">
-        <h2 class="title">Poissaolot</h2>
-        <away v-for="away in awayss"
-            :key="away.name"
-            :away="away"
-            @save-away="onAddOrUpdateAway" 
-            @delete-away="deleteAway" />
+        <h2 class="title">AwayHomes</h2>
+        <away-home v-for="awayhome in awayhomes"
+            :key="awayhome.name"
+            :awayHome="awayhome"
+            @save-awayhome="onAddOrUpdateAwayHome" 
+            @delete-awayhome="deleteAwayHome" />
     </section>
     <section class="section section-container" style="padding-bottom: 10px;">
       <div class="box">
-        <add-update-away title="Add Away" @save-contact="onAddOrUpdateAway" />
+        <add-update-awayhome title="Add AwayHome" @save-awayhome="onAddOrUpdateAwayHome" />
       </div>
     </section>
   </div>
   <script>
-  const AddUpdateAway = {
-    props: ['away', 'title'],
+  const AddUpdateAwayHome = {
+    props: ['awayhome', 'title'],
     data () {
       return {
-        id: this.away ? this.away.id : null,
-        firstName: this.contact ? this.contact.firstName : '',
-        lastName: this.contact ? this.contact.lastName : '',
-        phone: this.contact ? this.contact.phone : ''
+        id: this.awayhome ? this.awayhome.id : null,
+        startDate: this.awayhome ? this.awayhome.startDate : '',
+        startTime: this.awayhome ? this.awayhome.startTime : '',
+        stopDate: this.awayhome ? this.awayhome.stopDate : '',
+        stopTime: this.awayhome ? this.awayhome.stopTime : '',
       }
     },
     methods: {
       save() {
-        this.$emit('save-contact', { id: this.id, firstName: this.firstName, lastName: this.lastName, phone: this.phone })
+        this.$emit('save-awayhome', { id: this.id, startDate: this.startDate, startTime: this.startTime, stopDate: this.stopDate, stopTime: this.stopTime })
         if (!this.id) {
-          this.firstName = ''
-          this.lastName = ''
-          this.phone = ''
+          this.startDate = ''
+          this.startTime = ''
+          this.stopDate = ''
+          this.stopTime = ''
         }
       }
     },
@@ -59,21 +61,27 @@
       <form class="form" @submit.prevent="save">
         <h3 class='subtitle'>{{ title }}</h3>
         <div class="field">
-            <label>First Name</label>
+            <label>Start Date</label>
             <div class="control">
-              <input class="input" type="text" v-model="firstName">
+              <input class="input" type="text" v-model="startDate">
             </div> 
         </div>
         <div class="field">
-            <label>Last Name</label>
+            <label>Start time</label>
             <div class="control">
-              <input class="input" type="text" v-model="lastName">
+              <input class="input" type="text" v-model="startTime">
             </div> 
         </div>
         <div class="field">
-            <label>Phone</label>
+            <label>Stop Date</label>
             <div class="control">
-              <input class="input" type="text" v-model="phone">
+              <input class="input" type="text" v-model="stopDate">
+            </div> 
+        </div>
+        <div class="field">
+            <label>Stop time</label>
+            <div class="control">
+              <input class="input" type="text" v-model="stopTime">
             </div> 
         </div>
         <div class="field">
@@ -85,36 +93,37 @@
     `
   }
 
-  const Contact = {
-    props: ['contact'],
-    components: { 'add-update-contact': AddUpdateContact },
+  const AwayHome = {
+    props: ['awayhome'],
+    components: { 'add-update-awayhome': AddUpdateAwayHome },
     data () {
       return {
         showDetail: false
       }
     },
     methods: {
-      onAddOrUpdateContact(contact) {
-        this.$emit('save-contact', contact)
+      onAddOrUpdateAwayHome(awayhome) {
+        this.$emit('save-awayhome', awayhome)
       },
-      deleteContact (contact) {
-        this.$emit('delete-contact', contact)
+      deleteAwayHome (awayhome) {
+        this.$emit('delete-awayhome', awayhome)
       }
     },
     template: `
       <div class="card">
         <header class="card-header">
           <p @click="showDetail = !showDetail" class="card-header-title">
-            {{ contact.firstName }} {{ contact.lastName }}
+            Start:  {{ awayhome.startDate }} {{ awayhome.startTime }}
+            Stop:  {{ awayhome.stopDate }} {{ awayhome.stopTime }}
           </p>
-          <a class="card-header-icon" @click.stop="deleteContact(contact)">
+          <a class="card-header-icon" @click.stop="deleteAwayHome(awayhome)">
             <span class="icon">
               <i class="fa fa-trash"></i>
             </span>
           </a>
         </header>
         <div v-show="showDetail" class="card-content">
-            <add-update-contact title="Details" :contact="contact" @save-contact="onAddOrUpdateContact" />
+            <add-update-awayhome title="Details" :awayhome="awayhome" @save-awayhome="onAddOrUpdateAwayHome" />
         </div>
       </div>
     `
@@ -122,51 +131,51 @@
 
   new Vue({
     el: '#app',
-    components: { contact: Contact, 'add-update-contact': AddUpdateContact },
+    components: { AwayHome: AwayHome, 'add-update-awayhome': AddUpdateAwayHome },
     data: {
-      contacts: [],
-      apiURL: 'http://localhost:3000/api/contacts'
+      awayhomes: [],
+      apiURL: 'http://localhost:3000/api/awayHomes'
     },
     methods: {
-      onAddOrUpdateContact (contact) {
-        if (contact.id) {
-          this.updateContact(contact)
+      onAddOrUpdateAwayHome (awayhome) {
+        if (awayhome.id) {
+          this.updateAwayHome(awayhome)
         } else {
-          this.addContact(contact)
+          this.addAwayHome(awayhome)
         }
       },
-      addContact (contact) {
-        return axios.post(this.apiURL, contact)
+      addAwayHome (awayhome) {
+        return axios.post(this.apiURL, awayhome)
           .then((response) => {
-            const copy = this.contacts.slice()
+            const copy = this.awayhomes.slice()
             copy.push(response.data)
-            this.contacts = copy
+            this.awayhomes = copy
           })
       },
-      updateContact (contact) {
-        return axios.put(`${this.apiURL}/${contact.id}`, contact)
+      updateAwayHome (awayhome) {
+        return axios.put(`${this.apiURL}/${awayhome.id}`, awayhome)
           .then((response) => {
-            const copy = this.contacts.slice()
+            const copy = this.awayhomes.slice()
             const idx = copy.findIndex((c) => c.id === response.data.id)
             copy[idx] = response.data
-            this.contacts = copy
+            this.awayhomes = copy
           })
       },
-      deleteContact (contact) {
-        console.log('deleting', contact)
-        return axios.delete(`${this.apiURL}/${contact.id}`)
+      deleteAwayHome (awayhome) {
+        console.log('deleting', awayhome)
+        return axios.delete(`${this.apiURL}/${awayhome.id}`)
           .then((response) => {
-            let copy = this.contacts.slice()
+            let copy = this.awayhomes.slice()
             const idx = copy.findIndex((c) => c.id === response.data.id)
             copy.splice(idx, 1)
-            this.contacts = copy
+            this.awayhomes = copy
           })
       }
     },
     beforeMount () {
       axios.get(this.apiURL)
         .then((response) => {
-          this.contacts = response.data
+          this.awayhomes = response.data
         })
     }
   })

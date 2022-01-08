@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     startDate: DataTypes.STRING,
     startTime: DataTypes.STRING,
     stopDate: DataTypes.STRING,
-    stopTime: DataTypes.STRING,
+    stopTime: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'awayHome',
