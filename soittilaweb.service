@@ -6,6 +6,7 @@ After=network.target
 [Service]
 Environment="NODE_PORT=3000"
 Environment="NODE_ENV=Production"
+WorkingDirectory=/opt/soittilaweb
 Type=simple
 User=lampo
 ExecStart=/usr/local/bin/node /opt/soittilaweb/app.js

@@ -13,6 +13,15 @@ const getTemp = (sensor) => {
     })
   })
 }
+const getTempIgnoreFail = (sensor) => {
+  input = `/${sensor}/temperature`
+  return new Promise((resolve, reject) => {
+    con.read(input, (error,result) => {
+      if(error){ resolve({sensor: sensor, temp: null})}
+      resolve({ sensor: sensor, temp: result})
+    })
+  })
+}
 
 const getPresence = (sensor) => {
   return new Promise((resolve, reject) => {
@@ -24,7 +33,7 @@ const getPresence = (sensor) => {
 }
 const  getTemps = async (sensors) => {
     const results = {}
-    let data = await Promise.all(Object.keys(sensors).map(async sensor => {return await getTemp(sensor)}))
+    let data = await Promise.all(Object.keys(sensors).map(async sensor => {return await getTempIgnoreFail(sensor)}))
     for (let value of data) { results[value.sensor] = {temp: value.temp} }
     return results
 }
