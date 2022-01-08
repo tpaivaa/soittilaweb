@@ -134,7 +134,7 @@
     components: { AwayHome: AwayHome, 'add-update-awayhome': AddUpdateAwayHome },
     data: {
       awayhomes: [],
-      apiURL: 'http://localhost:3000/api/awayHomes'
+      apiURL: window.location.origin + '/api/awayHomes'
     },
     methods: {
       onAddOrUpdateAwayHome (awayhome) {
