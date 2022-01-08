@@ -10,8 +10,9 @@ app.use(bodyParser.json())
 app.use(express.static(__dirname + '/static'))
 
 
-app.get('/', (req, res) => {
-  res.json({message: 'alive', running: process.env.NODE_ENV})
+app.get('/status', (req, res) => {
+  const node_env = process.env.NODE_ENV || 'Development'
+  res.json({status: 'alive', running: node_env})
 })
 
 app.use('/awayhome', awayHomeRouter)
