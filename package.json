@@ -5,10 +5,13 @@
   "main": "app.js",
   "dependencies": {
     "better-sqlite3": "^7.4.4",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize": "^6.12.5",
+    "sqlite3": "^4.2.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0"
   },
   "scripts": {
     "start": "node app.js",

@@ -4,7 +4,8 @@ Documentation=http://raspi:3000
 After=network.target
 
 [Service]
-Environment=NODE_PORT=3000
+Environment="NODE_PORT=3000"
+Environment="NODE_ENV=Production"
 Type=simple
 User=lampo
 ExecStart=/usr/local/bin/node /opt/soittilaweb/app.js
