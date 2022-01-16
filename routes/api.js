@@ -22,7 +22,7 @@ router.post('/awayHomes', (req, res) => {
       console.log('***There was an error creating a awayHome', JSON.stringify(awayHome))
       return res.status(400).send(err)
     })
-});
+})
 
 router.put('/awayHomes/:id', (req, res) => {
   const id = parseInt(req.params.id)
@@ -36,7 +36,7 @@ router.put('/awayHomes/:id', (req, res) => {
         res.status(400).send(err)
       })
   })
-});
+})
 
 router.delete('/awayHomes/:id', (req, res) => {
   const id = parseInt(req.params.id)
@@ -68,7 +68,18 @@ router.post('/owfs/getTemps', (req, res) => {
       console.log(`***Error getting sensors ${Object.keys(req.body)} temperatures`, JSON.stringify(err))
       res.status(400).send(err)
     })
+})
 
+router.get('/templimits', async (req, res) => {
+  try {
+    const temp = parseInt(req.query.temp)
+    const templimits = await db.templimits.findOne({ where: { ulko: temp } })
+    res.send(templimits)
+  }
+  catch (err){
+    console.log('***Error getting templimits', JSON.stringify(err))
+      res.status(400).send(err)
+  }
 })
 
 module.exports = router

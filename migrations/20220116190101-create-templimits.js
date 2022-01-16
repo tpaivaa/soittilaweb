@@ -9,55 +9,55 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ulko: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       khhLattiaLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       khhLattiaHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       olohuoneLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       olohuoneHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       ykMHLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       ykMHHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       khhLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       khhHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       makuuhuoneLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       makuuhuoneHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       keittioLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       keittioHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       keittioLattiaLowLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       keittioLattiaHighLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       verantaLattiaLimit: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       veranta: {
-        type: Sequelize.STRING
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

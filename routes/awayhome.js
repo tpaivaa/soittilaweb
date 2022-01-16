@@ -5,7 +5,7 @@ const awayhome = require('../services/awayhome')
 /* GET quotes listing. */
 router.get('/', (req, res, next) => {
   try {
-    res.json(awayhome.getMultiple(req.query.page || 1))
+    res.json(awayhome.getMultiple(req.query.page || 1))
   } catch(err) {
     console.error(`Error while getting awayHome Date and Times `, err.message)
     next(err)
