@@ -363,6 +363,7 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date()
       },{
+      ulko: 17,
       khhLattiaLowLimit: 20,
       khhLattiaHighLimit: 28,
       olohuoneLowLimit: 21,

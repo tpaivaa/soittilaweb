@@ -9,54 +9,72 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       ulko: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        unique: true
       },
       khhLattiaLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       khhLattiaHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       olohuoneLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       olohuoneHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       ykMHLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       ykMHHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       khhLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       khhHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       makuuhuoneLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       makuuhuoneHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       keittioLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       keittioHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       keittioLattiaLowLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       keittioLattiaHighLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       verantaLattiaLimit: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       veranta: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
