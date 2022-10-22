@@ -127,6 +127,8 @@ router.put('/templimits/:id', (req, res) => {
 
 // Current temperatures API
 router.get('/currentTemps', async (req, res) => {
+  console.log(req.query.room)
+  console.log(typeof req.query.room)
   try {
     if (typeof req.query.room === "string") { // Returns single current temperature 
       const room = req.query.room // must hav equery param ?room=x example http://10.10.10.5/api/currentTemps?room=khh
