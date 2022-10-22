@@ -134,8 +134,9 @@ router.get('/currentTemps', async (req, res) => {
       const room = req.query.room // must hav equery param ?room=x example http://10.10.10.5/api/currentTemps?room=khh
       const currentTemps = await db.currentTemps.findOne({ where: { room: room } })
       res.send(currentTemps)
-    } 
+    }
     else if (req.query.room === "undefined") {
+      console.log('Should get all currentTemps')
       const allCurrentTemps = await db.currentTemps.findAll()
       res.send(allCurrentTemps)
     }
