@@ -133,7 +133,7 @@ router.get('/currentTemps', async (req, res) => {
       const currentTemps = await db.currentTemps.findOne({ where: { room: room } })
       res.send(currentTemps)
     } 
-    else {
+    else if (req.query.room =! "") {
       return db.currentTemps.findAll()
       .then((currentTemps) => res.send(currentTemps))
       .catch((err) => {
@@ -146,6 +146,19 @@ router.get('/currentTemps', async (req, res) => {
       console.log('***Error getting currentTemps', JSON.stringify(err))
         res.status(400).send(err)
     }
+})
+
+// Palauttaa yhden currentTempsin 
+router.get('/currentTemps/:id', async (req, res) => {
+  try {
+    const id = parseInt(req.params.id)
+    const currentTemp = await db.currentTemps.findByPk(id)
+    res.send(currentTemp)
+  }
+  catch (err){
+    console.log(`***Error getting currentTemps for id: ${id}`, JSON.stringify(err))
+      res.status(400).send(err)
+  }
 })
 
 router.post('/currentTemps', (req, res) => {
