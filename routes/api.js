@@ -70,9 +70,10 @@ router.post('/owfs/getTemps', (req, res) => {
     })
 })
 
+//Palauttaa templimitin ulko lämpötilanmukaan
 router.get('/templimits', async (req, res) => {
   try {
-    const temp = parseInt(req.query.temp)
+    const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
     const templimits = await db.templimits.findOne({ where: { ulko: temp } })
     res.send(templimits)
   }
@@ -80,6 +81,43 @@ router.get('/templimits', async (req, res) => {
     console.log('***Error getting templimits', JSON.stringify(err))
       res.status(400).send(err)
   }
+})
+
+// Palauttaa yhden templimit konfiguraation
+router.get('/templimits/:id', async (req, res) => {
+  try {
+    const id = parseInt(req.params.id)
+    const templimit = await db.templimits.findByPk(id)
+    res.send(templimit)
+  }
+  catch (err){
+    console.log(`***Error getting templimit for id: ${id}`, JSON.stringify(err))
+      res.status(400).send(err)
+  }
+})
+
+router.post('/templimits', (req, res) => {
+  const { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta } = req.body
+  return db.templimits.create( { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta })
+    .then((templimits) => res.send(templimits))
+    .catch((err) => {
+      console.log('***There was an error creating a templimit', JSON.stringify(err))
+      return res.status(400).send(err)
+    })
+})
+
+router.put('/templimits/:id', (req, res) => {
+  const id = parseInt(req.params.id)
+  return db.templimits.findByPk(id)
+  .then((templimits) => {
+    const { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta } = req.body
+    return templimits.update({ ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta })
+      .then(() => res.send(templimits))
+      .catch((err) => {
+        console.log('***Error updating templimits', JSON.stringify(err))
+        res.status(400).send(err)
+      })
+  })
 })
 
 module.exports = router
