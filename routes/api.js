@@ -184,6 +184,25 @@ router.put('/currentTemps/:id', (req, res) => {
   })
 })
 
+// Change / Update single room temperature 
+router.put('/currentTemps', async (req, res) => {
+  try { 
+    const { room } = req.body
+    const currentRoom =  await db.currentTemps.findOne({ where: { room: room } })
+    console.log(currentRoom)
+    const updated = currentTemps.update({ room, temp })
+    res.send(updated)
+  } catch (err){
+    console.log(`***Error changing CurrentTemp ${room}`, JSON.stringify(err))
+    res.status(400).send(err) 
+  }
+
+ 
+  })
+
+
+
+
 router.delete('/currentTemps/:id', (req, res) => {
   const id = parseInt(req.params.id)
   return db.currentTemps.findByPk(id)
