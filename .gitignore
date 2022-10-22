@@ -34,3 +34,4 @@ node_modules
 
 # Do not sync DB's
 *.db
+./local.db
