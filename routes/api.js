@@ -191,7 +191,7 @@ router.put('/currentTemps', async (req, res) => {
     const currentRoom =  await db.currentTemps.findOne({ where: { room: room } })
     console.log(currentRoom)
     const updated = currentRoom.update({ room, temp })
-    res.send(updated)
+    res.json({"updated": req.body})
   } catch (err){
     console.log(`***Error changing CurrentTemp ${room}`, JSON.stringify(err))
     res.status(400).send(err) 
