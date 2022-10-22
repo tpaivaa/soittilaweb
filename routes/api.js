@@ -135,7 +135,7 @@ router.get('/currentTemps', async (req, res) => {
       const currentTemps = await db.currentTemps.findOne({ where: { room: room } })
       res.send(currentTemps)
     }
-    else if (req.query.room === "undefined") {
+    else {
       console.log('Should get all currentTemps')
       const allCurrentTemps = await db.currentTemps.findAll()
       res.send(allCurrentTemps)
