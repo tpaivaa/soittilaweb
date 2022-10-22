@@ -11,8 +11,8 @@ router.get('/awayHomes', (req, res) => {
     .catch((err) => {
       console.log('***There was an error querying awayHomes', JSON.stringify(err))
       return res.send(err)
-    });
-});
+    })
+})
 
 router.post('/awayHomes', (req, res) => {
   const { startDate, startTime, stopDate, stopTime } = req.body
@@ -73,9 +73,14 @@ router.post('/owfs/getTemps', (req, res) => {
 //Palauttaa templimitin ulko lämpötilanmukaan
 router.get('/templimits', async (req, res) => {
   try {
-    const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
-    const templimits = await db.templimits.findOne({ where: { ulko: temp } })
-    res.send(templimits)
+    if (typeof req.query.temp === "string") {
+      const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
+      const templimits = await db.templimits.findOne({ where: { ulko: temp } })
+      res.send(templimits)
+    } else {
+      const alltemplimits = await db.templimits.findAll()
+      res.send(alltemplimits)
+    }
   }
   catch (err){
     console.log('***Error getting templimits', JSON.stringify(err))
@@ -119,5 +124,64 @@ router.put('/templimits/:id', (req, res) => {
       })
   })
 })
+
+// Current temperatures API
+router.get('/currentTemps', async (req, res) => {
+  try {
+    if (typeof req.query.room === "string") { // Returns single current temperature 
+      const room = parseInt(req.query.room) // must hav equery param ?room=x example http://10.10.10.5/api/currentTemps?room=khh
+      const currentTemps = await db.templimits.findOne({ where: { room: room } })
+      res.send(currentTemps)
+    } 
+    else {
+      return db.awayHome.findAll()
+      .then((currentTemps) => res.send(currentTemps))
+      .catch((err) => {
+        console.log('***There was an error querying all currentTemps', JSON.stringify(err))
+        return res.send(err)
+      });
+    }
+  }
+  catch (err){
+      console.log('***Error getting currentTemps', JSON.stringify(err))
+        res.status(400).send(err)
+    }
+})
+
+router.post('/currentTemps', (req, res) => {
+  const { room, temp } = req.body
+  return db.currentTemps.create({ room, temp })
+    .then((currentTemps) => res.send(currentTemps))
+    .catch((err) => {
+      console.log('***There was an error creating a currentTemps', JSON.stringify(awayHome))
+      return res.status(400).send(err)
+    })
+})
+
+router.put('/currentTemps/:id', (req, res) => {
+  const id = parseInt(req.params.id)
+  return db.currentTemps.findByPk(id)
+  .then((currentTemps) => {
+    const { room, temp } = req.body
+    return currentTemps.update({ room, temp })
+      .then(() => res.send(currentTemps))
+      .catch((err) => {
+        console.log('***Error updating currentTemps', JSON.stringify(err))
+        res.status(400).send(err)
+      })
+  })
+})
+
+router.delete('/currentTemps/:id', (req, res) => {
+  const id = parseInt(req.params.id)
+  return db.currentTemps.findByPk(id)
+    .then((currentTemps) => currentTemps.destroy())
+    .then(() => res.send({ id }))
+    .catch((err) => {
+      console.log('***Error deleting currentTemps', JSON.stringify(err))
+      res.status(400).send(err)
+    })
+})
+
 
 module.exports = router

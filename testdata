@@ -26,3 +26,9 @@ npx sequelize-cli model:generate --name templimits \
                                   --attributes ulko:string,khhLattiaLowLimit:string,khhLattiaHighLimit:string,olohuoneLowLimit:string,olohuoneHighLimit:string,ykMHLowLimit:string, \
                                     ykMHHighLimit:string,khhLowLimit:string,khhHighLimit:string,makuuhuoneLowLimit:string,makuuhuoneHighLimit:string,keittioLowLimit:string,  \
                                     keittioHighLimit:string,keittioLattiaLowLimit:string,keittioLattiaHighLimit:string,verantaLattiaLimit:string,veranta:string
+
+# Current Temperatures
+npx sequelize-cli model:generate --name currentTemps --attributes room:string,temp:decimal
+
+# To create seed
+npx sequelize-cli seed:generate --name test-currentTemps
