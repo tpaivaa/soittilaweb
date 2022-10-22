@@ -187,10 +187,10 @@ router.put('/currentTemps/:id', (req, res) => {
 // Change / Update single room temperature 
 router.put('/currentTemps', async (req, res) => {
   try { 
-    const { room } = req.body
+    const { room, temp } = req.body
     const currentRoom =  await db.currentTemps.findOne({ where: { room: room } })
     console.log(currentRoom)
-    const updated = currentTemps.update({ room, temp })
+    const updated = currentRoom.update({ room, temp })
     res.send(updated)
   } catch (err){
     console.log(`***Error changing CurrentTemp ${room}`, JSON.stringify(err))
