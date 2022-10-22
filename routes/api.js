@@ -130,11 +130,11 @@ router.get('/currentTemps', async (req, res) => {
   try {
     if (typeof req.query.room === "string") { // Returns single current temperature 
       const room = parseInt(req.query.room) // must hav equery param ?room=x example http://10.10.10.5/api/currentTemps?room=khh
-      const currentTemps = await db.templimits.findOne({ where: { room: room } })
+      const currentTemps = await db.currentTemps.findOne({ where: { room: room } })
       res.send(currentTemps)
     } 
     else {
-      return db.awayHome.findAll()
+      return db.currentTemps.findAll()
       .then((currentTemps) => res.send(currentTemps))
       .catch((err) => {
         console.log('***There was an error querying all currentTemps', JSON.stringify(err))
