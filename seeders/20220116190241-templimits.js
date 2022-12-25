@@ -41,6 +41,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -61,6 +62,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -81,6 +83,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -101,6 +104,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -121,6 +125,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -141,6 +146,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -161,6 +167,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -181,6 +188,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -201,6 +209,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -221,6 +230,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -241,6 +251,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -261,6 +272,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -281,6 +293,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -301,6 +314,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -321,6 +335,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -341,6 +356,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -361,6 +377,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -381,6 +398,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -401,6 +419,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -421,6 +440,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -441,6 +461,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 24,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -461,6 +482,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 24,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -481,6 +503,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 24,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -501,6 +524,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 26,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -521,6 +545,7 @@ module.exports = {
       keittioLattiaHighLimit: 26,
       verantaLattiaLimit:  30,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -541,6 +566,7 @@ module.exports = {
       keittioLattiaHighLimit: 26,
       verantaLattiaLimit: 30,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -561,6 +587,7 @@ module.exports = {
       keittioLattiaHighLimit: 26,
       verantaLattiaLimit: 30,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -581,6 +608,7 @@ module.exports = {
       keittioLattiaHighLimit: 26,
       verantaLattiaLimit: 30,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -601,6 +629,7 @@ module.exports = {
       keittioLattiaHighLimit: 26,
       verantaLattiaLimit: 30,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -621,6 +650,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -641,6 +671,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -661,6 +692,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -681,6 +713,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -701,6 +734,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -721,6 +755,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 22,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -741,6 +776,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -761,6 +797,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -781,6 +818,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -801,6 +839,7 @@ module.exports = {
       keittioLattiaHighLimit: 35,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -821,6 +860,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 24,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -841,6 +881,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 24,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -861,6 +902,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 24,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -881,6 +923,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -901,6 +944,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -921,6 +965,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -941,6 +986,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -961,6 +1007,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -981,6 +1028,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1001,6 +1049,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1021,6 +1070,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1041,6 +1091,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1061,6 +1112,7 @@ module.exports = {
       keittioLattiaHighLimit: 32,
       verantaLattiaLimit: 34,
       veranta: 21,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1081,6 +1133,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1101,6 +1154,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1121,6 +1175,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1141,6 +1196,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1161,6 +1217,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1181,6 +1238,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1201,6 +1259,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1221,6 +1280,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1241,6 +1301,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1261,6 +1322,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1281,6 +1343,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1301,6 +1364,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1321,6 +1385,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1341,6 +1406,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1361,6 +1427,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1381,6 +1448,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1401,6 +1469,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1421,6 +1490,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
@@ -1441,6 +1511,7 @@ module.exports = {
       keittioLattiaHighLimit: 34,
       verantaLattiaLimit: 34,
       veranta: 20,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       }
