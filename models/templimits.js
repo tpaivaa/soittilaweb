@@ -30,7 +30,8 @@ module.exports = (sequelize, DataTypes) => {
     keittioLattiaLowLimit: { allowNull: false, type:DataTypes.INTEGER },
     keittioLattiaHighLimit: { allowNull: false, type:DataTypes.INTEGER },
     verantaLattiaLimit: { allowNull: false, type:DataTypes.INTEGER },
-    veranta: { allowNull: false, type:DataTypes.INTEGER }
+    veranta: { allowNull: false, type:DataTypes.INTEGER },
+    ykMH2: { allowNull: false, type:DataTypes.INTEGER }
   }, {
     sequelize,
     modelName: 'templimits',

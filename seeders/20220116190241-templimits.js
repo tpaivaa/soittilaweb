@@ -20,6 +20,7 @@ module.exports = {
       keittioLattiaHighLimit: 20,
       verantaLattiaLimit: 15,
       veranta: 18,
+      ykMH2: 23,
       createdAt: new Date(),
       updatedAt: new Date()
       },{
