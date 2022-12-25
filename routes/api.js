@@ -1,5 +1,6 @@
 
 const express = require('express')
+const { and } = require('sequelize/dist')
 const router = express.Router()
 const db = require('../models')
 const getTemp = require('../services/owfs').getTemp
@@ -77,6 +78,13 @@ router.get('/templimits', async (req, res) => {
       const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
       const templimits = await db.templimits.findOne({ where: { ulko: temp } })
       res.send(templimits)
+    }
+    if ((typeof req.query.temp === "string") && (typeof req.query.sensor === "string")) {
+      const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
+      const sensor = req.query.sensor
+      const query = `select ${sensor} FROM templimits where ulko like ${temp}`
+      const templimits = await sequelize.query(query, { type: QueryTypes.SELECT })
+      res.send(templimits)
     } else {
       const alltemplimits = await db.templimits.findAll()
       res.send(alltemplimits)
@@ -102,7 +110,7 @@ router.get('/templimits/:id', async (req, res) => {
 })
 
 router.post('/templimits', (req, res) => {
-  const { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta } = req.body
+  const { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta,ykmh2 } = req.body
   return db.templimits.create( { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta })
     .then((templimits) => res.send(templimits))
     .catch((err) => {
@@ -115,7 +123,7 @@ router.put('/templimits/:id', (req, res) => {
   const id = parseInt(req.params.id)
   return db.templimits.findByPk(id)
   .then((templimits) => {
-    const { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta } = req.body
+    const { ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta,ykmh2 } = req.body
     return templimits.update({ ulko,khhLattiaLowLimit,khhLattiaHighLimit,olohuoneLowLimit,olohuoneHighLimit,ykMHLowLimit,ykMHHighLimit,khhLowLimit,khhHighLimit,makuuhuoneLowLimit,makuuhuoneHighLimit,keittioLowLimit,keittioHighLimit,keittioLattiaLowLimit,keittioLattiaHighLimit,verantaLattiaLimit,veranta })
       .then(() => res.send(templimits))
       .catch((err) => {
@@ -130,7 +138,7 @@ router.get('/currentTemps', async (req, res) => {
   console.log(req.query.room)
   console.log(typeof req.query.room)
   try {
-    if (typeof req.query.room === "string") { // Returns single current temperature 
+    if (typeof req.query.room === "string") { // Returns single current temperature
       const room = req.query.room // must hav equery param ?room=x example http://10.10.10.5/api/currentTemps?room=khh
       const currentTemps = await db.currentTemps.findOne({ where: { room: room } })
       res.send(currentTemps)
@@ -147,7 +155,7 @@ router.get('/currentTemps', async (req, res) => {
     }
 })
 
-// Palauttaa yhden currentTempsin 
+// Palauttaa yhden currentTempsin
 router.get('/currentTemps/:id', async (req, res) => {
   try {
     const id = parseInt(req.params.id)
@@ -184,9 +192,9 @@ router.put('/currentTemps/:id', (req, res) => {
   })
 })
 
-// Change / Update single room temperature 
+// Change / Update single room temperature
 router.put('/currentTemps', async (req, res) => {
-  try { 
+  try {
     const { room, temp } = req.body
     const currentRoom =  await db.currentTemps.findOne({ where: { room: room } })
     console.log(currentRoom)
@@ -194,10 +202,10 @@ router.put('/currentTemps', async (req, res) => {
     res.json({"updated": req.body})
   } catch (err){
     console.log(`***Error changing CurrentTemp ${room}`, JSON.stringify(err))
-    res.status(400).send(err) 
+    res.status(400).send(err)
   }
 
- 
+
   })
 
 
