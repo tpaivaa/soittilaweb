@@ -1,6 +1,6 @@
 
 const express = require('express')
-const { and } = require('sequelize/dist')
+const { sequelize } = require('../models')
 const router = express.Router()
 const db = require('../models')
 const getTemp = require('../services/owfs').getTemp
@@ -74,16 +74,16 @@ router.post('/owfs/getTemps', (req, res) => {
 //Palauttaa templimitin ulko lämpötilanmukaan
 router.get('/templimits', async (req, res) => {
   try {
-    if (typeof req.query.temp === "string") {
-      const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
-      const templimits = await db.templimits.findOne({ where: { ulko: temp } })
-      res.send(templimits)
-    }
     if ((typeof req.query.temp === "string") && (typeof req.query.sensor === "string")) {
-      const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5/api/templimits?temp=10
-      const sensor = req.query.sensor
+      const temp = parseInt(req.query.temp) // must have query param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
+      const sensor = req.query.sensor // must have query param sensor=y example http://10.10.10.5:3000/api/templimits?temp=10&sensor=y
       const query = `select ${sensor} FROM templimits where ulko like ${temp}`
       const templimits = await sequelize.query(query, { type: QueryTypes.SELECT })
+      res.send(templimits)
+    }
+    if (typeof req.query.temp === "string") {
+      const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
+      const templimits = await db.templimits.findOne({ where: { ulko: temp } })
       res.send(templimits)
     } else {
       const alltemplimits = await db.templimits.findAll()
@@ -204,9 +204,7 @@ router.put('/currentTemps', async (req, res) => {
     console.log(`***Error changing CurrentTemp ${room}`, JSON.stringify(err))
     res.status(400).send(err)
   }
-
-
-  })
+})
 
 
 
