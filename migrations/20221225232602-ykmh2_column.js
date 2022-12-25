@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    return Sequelize.transaction(async transaction => {
+    return sequelize.transaction(async transaction => {
       await queryInterface.addColumn(
         'templimits',
         'ykMH2',
@@ -19,7 +19,7 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return Sequelize.transaction(async transaction => {
+    return sequelize.transaction(async transaction => {
       await queryInterface.addColumn(
         'templimits',
         'ykMH2',
