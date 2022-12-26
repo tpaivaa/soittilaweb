@@ -16,7 +16,7 @@ if (config.use_env_variable) {
   console.log(config)
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
-  sequelize = new Sequelize(config.database, config.username, config.password, config);
+  sequelize = new Sequelize(config.database, config.username, config.password, {logging: (...msg) => console.log(msg)},config);
   console.log("Else: ", config)
 }
 
