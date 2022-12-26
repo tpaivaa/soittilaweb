@@ -8,7 +8,7 @@
     "dialect": "sqlite"
   },
   "production": {
-    "use_env_variable": "DATABASE_URL",
+    "use_env_variable": "./local.db",
     "storage": "./local.db",
     "dialect": "sqlite",
     "logging": "console.log"
