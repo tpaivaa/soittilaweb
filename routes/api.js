@@ -19,7 +19,7 @@ router.post('/awayHomes', (req, res) => {
   return db.awayHome.create({ startDate, startTime, stopDate, stopTime })
     .then((awayHome) => res.send(awayHome))
     .catch((err) => {
-      console.log('***There was an error creating a awayHome', JSON.stringify(awayHome))
+      console.log('***There was an error creating a awayHome', JSON.stringify(err))
       return res.status(400).send(err)
     })
 })
