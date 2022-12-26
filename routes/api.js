@@ -80,11 +80,8 @@ router.get('/templimits', async (req, res) => {
       //console.log(query)
       const templimits = await db.templimits.findOne({
                                                        where: { ulko: temp },
-                                                       attributes: {
-                                                        exclude: ['createdAt', 'updatedAt'],
-                                                        include: ['id', sensor]
-                                                       }
-                                                      })
+                                                       attributes:  ['id', sensor]
+                                                     })
       res.send(templimits)
       return
     }
