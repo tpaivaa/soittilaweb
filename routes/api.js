@@ -86,6 +86,7 @@ router.get('/templimits', async (req, res) => {
                                                        }
                                                       })
       res.send(templimits)
+      return
     }
     if (typeof req.query.temp === "string") {
       const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
