@@ -4,7 +4,7 @@ const app = express()
 app.set('json spaces', 2)
 app.use(express.json())
 const port = 3000 || process.env.PORT
-const awayHomeRouter = require('./routes/awayhome')
+// const awayHomeRouter = require('./routes/awayhome')
 const apiRouter = require('./routes/api')
 
 
@@ -16,7 +16,7 @@ app.get('/status', (req, res) => {
   res.json({status: 'alive', running: node_env})
 })
 
-app.use('/awayhome', awayHomeRouter)
+// app.use('/awayhome', awayHomeRouter)
 app.use('/api', apiRouter)
 
 app.listen(port, () => {
