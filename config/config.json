@@ -9,6 +9,7 @@
   },
   "production": {
     "storage": "./local.db",
-    "dialect": "sqlite"
+    "dialect": "sqlite",
+    "logging": "console.log"
   }
 }
