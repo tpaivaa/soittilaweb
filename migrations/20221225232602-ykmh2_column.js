@@ -7,7 +7,8 @@ module.exports = {
         'ykMH2',
         {
           allowNull: false,
-          type: Sequelize.INTEGER
+          type: Sequelize.INTEGER,
+          defaultValue: 0
         }
       )
   },
