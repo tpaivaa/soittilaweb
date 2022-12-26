@@ -1,7 +1,5 @@
 
 const express = require('express')
-const { sequelize } = require('../models')
-const { QueryTypes } = require('sequelize')
 const router = express.Router()
 const db = require('../models')
 const getTemp = require('../services/owfs').getTemp
@@ -79,7 +77,7 @@ router.get('/templimits', async (req, res) => {
       const temp = parseInt(req.query.temp) // must have query param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
       const sensor = req.query.sensor // must have query param sensor=y example http://10.10.10.5:3000/api/templimits?temp=10&sensor=y
       const query = "SELECT `id`, " + `${sensor}` + ", `createdAt`, `updatedAt` FROM `templimits` WHERE `templimits`.`ulko` = " + `${temp}`
-      const templimits = await sequelize.query(query, { type: QueryTypes.SELECT })
+      const templimits = await db.sequelize.query(query, { type: QueryTypes.SELECT })
       res.send(templimits)
     }
     if (typeof req.query.temp === "string") {

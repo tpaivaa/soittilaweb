@@ -20,7 +20,7 @@ app.use('/awayhome', awayHomeRouter)
 app.use('/api', apiRouter)
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`SoittilaWeb listening at http://localhost:${port}`)
 })
 
 
