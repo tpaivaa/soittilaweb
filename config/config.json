@@ -8,7 +8,7 @@
     "dialect": "sqlite"
   },
   "production": {
-    "storage": "../local.db",
+    "storage": "/opt/soittilaweb/local.db",
     "dialect": "sqlite",
     "logging": "(...msg) => console.log(msg)"
   }
