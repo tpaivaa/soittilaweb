@@ -10,6 +10,6 @@
   "production": {
     "storage": "./local.db",
     "dialect": "sqlite",
-    "logging": "console.log"
+    "logging": "(...msg) => console.log(msg)"
   }
 }
