@@ -82,16 +82,16 @@ router.get('/templimits', async (req, res) => {
                                                        where: { ulko: temp },
                                                        attributes:  ['id', sensor]
                                                      })
-      res.send(templimits)
+      res.json(templimits)
       return
     }
     if (typeof req.query.temp === "string") {
       const temp = parseInt(req.query.temp) // must hav equery param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
       const templimits = await db.templimits.findOne({ where: { ulko: temp } })
-      res.send(templimits)
+      res.json(templimits)
     } else {
       const alltemplimits = await db.templimits.findAll()
-      res.send(alltemplimits)
+      res.json(alltemplimits)
     }
   }
   catch (err){
