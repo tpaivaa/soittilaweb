@@ -18,7 +18,6 @@ if (config.use_env_variable) {
       storage: path.join(__dirname, '..', 'local.db'),
       dialect: 'sqlite'
     });
-  console.log("Else: ", config)
 }
 
 fs
