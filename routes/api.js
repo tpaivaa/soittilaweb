@@ -72,13 +72,13 @@ router.post('/owfs/getTemps', (req, res) => {
 
 //Palauttaa templimitin ulko lämpötilanmukaan
 router.get('/templimits', async (req, res) => {
-  console.log(req.query)
+
   try {
     if ((typeof req.query.temp === "string") && (typeof req.query.sensor === "string")) {
       const temp = parseInt(req.query.temp) // must have query param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
       const sensor = req.query.sensor // must have query param sensor=y example http://10.10.10.5:3000/api/templimits?temp=10&sensor=y
       //const query = "SELECT `id`, " + `${sensor}` + ", `createdAt`, `updatedAt` FROM `templimits` WHERE `templimits`.`ulko` = " + `${temp}` +";"
-      //console.log(query)
+
       const templimits = await db.templimits.findOne({
                                                        where: { ulko: temp },
                                                        attributes:  ['id', sensor]
@@ -140,8 +140,7 @@ router.put('/templimits/:id', (req, res) => {
 
 // Current temperatures API
 router.get('/currentTemps', async (req, res) => {
-  console.log(req.query.room)
-  console.log(typeof req.query.room)
+
   try {
     if (typeof req.query.room === "string") { // Returns single current temperature
       const room = req.query.room // must hav equery param ?room=x example http://10.10.10.5/api/currentTemps?room=khh
@@ -210,9 +209,6 @@ router.put('/currentTemps', async (req, res) => {
     res.status(400).send(err)
   }
 })
-
-
-
 
 router.delete('/currentTemps/:id', (req, res) => {
   const id = parseInt(req.params.id)

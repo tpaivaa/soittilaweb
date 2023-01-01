@@ -15,8 +15,6 @@ const getMultiple = (page = 1) => {
 const validateCreate = (dateAndTime) => {
   let messages = [];
 
-  console.log(dateAndTime)
-
   if (!dateAndTime) {
     messages.push('No object is provided')
   }
@@ -36,7 +34,7 @@ const validateCreate = (dateAndTime) => {
   if (!dateAndTime.stopTime) {
     messages.push('stopTime is empty')
   }
-  
+
   if (messages.length) {
     let error = new Error(messages.join())
     error.statusCode = 400
@@ -49,7 +47,7 @@ const create = (dateAndTimeObj) => {
   validateCreate(dateAndTimeObj)
   const {startDate, startTime, stopDate, stopTime} = dateAndTimeObj
   const result = db.run('INSERT INTO awayHome (startDate, startTime, stopDate, stopTime) VALUES (@startDate, @startTime, @stopDate, @stopTime)', {startDate, startTime, stopDate, stopTime})
-  
+
   let message = 'Error in creating AwayHome start and end'
   if (result.changes) {
     message = 'AwayHome config created successfully'
