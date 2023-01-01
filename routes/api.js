@@ -72,6 +72,7 @@ router.post('/owfs/getTemps', (req, res) => {
 
 //Palauttaa templimitin ulko lämpötilanmukaan
 router.get('/templimits', async (req, res) => {
+  console.log(req.query)
   try {
     if ((typeof req.query.temp === "string") && (typeof req.query.sensor === "string")) {
       const temp = parseInt(req.query.temp) // must have query param ?temp=x example http://10.10.10.5:3000/api/templimits?temp=10
