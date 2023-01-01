@@ -9,7 +9,6 @@
   },
   "production": {
     "storage": "/opt/soittilaweb/local.db",
-    "dialect": "sqlite",
-    "logging": "(...msg) => console.log(msg)"
+    "dialect": "sqlite"
   }
 }
